@@ -1,7 +1,6 @@
 #include "chessboard.h"
 #include "board_io.h"
 #include "localization.h"
-#include "check.c"
 #include "mode.h"
 
 int main() {
@@ -11,9 +10,9 @@ int main() {
         system("cls");
 
         printf("+---------------------------------------------------------------+\n");
-        printf("|                          GoBang Game                          |\n");
+        printf("|                          Renju  Game                          |\n");
         printf("|          Developed by Chen Yumeng (2023K8009929028)           |\n");
-        // printf("|          See https://github.com/Chen-Yuanmeng/GoBang          |\n");
+        // printf("|          See https://github.com/Chen-Yuanmeng/Renju           |\n");
         printf("+---------------------------------------------------------------+\n\n");
 
         printf("Please choose from the four modes below:\n\n");
