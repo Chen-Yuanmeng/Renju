@@ -27,7 +27,7 @@ int main() {
         int opt;
 
         scanf_s("%d", &opt);
-
+        system("cls");
         switch (opt) {
         case 1:
             man_man(); break;
