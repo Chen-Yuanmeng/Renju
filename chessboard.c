@@ -79,6 +79,7 @@ void draw_board(int board_state[][BOARD_SIZE], int last_put_position[]) {
     for (int c = 'A'; c < 'A' + BOARD_SIZE; ++c) {
         printf("%c ", c);
     }
+    printf("\n");
 }
 
 // Put BLACK or WHITE piece in `position`
