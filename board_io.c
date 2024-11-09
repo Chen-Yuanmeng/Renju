@@ -47,6 +47,17 @@ char* get_input_position(char prompt[]) {
 
     new_pos[0] = toupper(new_pos[0]);
 
+    while (
+        !(new_pos[0] >= 'A' && new_pos[0] <= 'O') || !(
+            (new_pos[1] >= '0' && new_pos[1] <= '9' && new_pos[2] == '\0') ||
+            (new_pos[1] == '1' && new_pos[2] >= '0' && new_pos[2] <= '5' && new_pos[3] == '\0')
+        )
+    ) {
+        printf("\033[31mWARNING\033[0m: %s is not standard input. Please re-enter: ", new_pos);
+        scanf_s("%3s", new_pos, 4);
+        new_pos[0] = toupper(new_pos[0]);
+    }
+
     return new_pos;
 }
 
