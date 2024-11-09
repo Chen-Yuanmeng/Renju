@@ -1,9 +1,8 @@
 #include "chessboard.h"
 
-const int BOARD_SIZE = 15;
-const int BLACK = 1;
-const int WHITE = 2;
-
+#define BOARD_SIZE 15
+#define BLACK 1
+#define WHITE 2
 
 // Needed for `void draw_board`
 int get_on_board_chars(int line, int column, int state, int last_put[]) {
