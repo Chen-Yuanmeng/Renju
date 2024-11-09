@@ -1,4 +1,4 @@
-// This file defines multiple modes in GoBang program:
+// This file defines multiple modes in Renju program:
 
 #include "mode.h"
 
@@ -30,10 +30,10 @@ void man_man() {
     while (!status) {
         put_piece_prompt(next, board_state, last_put);
         next = (next == BLACK) ? WHITE : BLACK;
-        status = check(board_state, last_put);
-        check_prompt(status);
         system("cls");
         draw_board(board_state, last_put);
+        status = check(board_state, last_put, next);
+        check_prompt(status);
     };
 }
 
@@ -49,7 +49,7 @@ void man_machine() {
     // All positions are (line, column) from 0 up.
     // Example: A15 (0, 0) | O15 (0, 14) | 
     int last_put[2] = {-1, -1};                     
-    printf("man_machine");
+    printf("To be developed...\n");
     system("pause");
 
 }
@@ -66,7 +66,7 @@ void machine_man() {
     // All positions are (line, column) from 0 up.
     // Example: A15 (0, 0) | O15 (0, 14) | 
     int last_put[2] = {-1, -1};                     
-    printf("machine_man");
+    printf("To be developed...\n");
     system("pause");
 
 }
@@ -83,7 +83,7 @@ void machine_machine() {
     // All positions are (line, column) from 0 up.
     // Example: A15 (0, 0) | O15 (0, 14) | 
     int last_put[2] = {-1, -1};                     
-    printf("machine_machine");
+    printf("To be developed...\n");
     system("pause");
 
 }
