@@ -2,6 +2,7 @@
 #include "board_io.h"
 #include "localization.h"
 #include "mode.h"
+#include "help.h"
 
 int main() {
     set_localization();
@@ -21,8 +22,9 @@ int main() {
         printf("\t3. Man-machine combat (machine first)\n");
         printf("\t4. Machine-machine combat (Just watch!)\n");
         printf("\t----OR----------------------------------------\n");
-        printf("\t5. Type 5 to exit :)\n\n");
-        printf("Please enter your option (1/2/3/4/5) below and press enter:\n");
+        printf("\t5. Type 5 to exit :)\n");
+        printf("\t6. Display help information.\n\n");
+        printf("Please enter your option (1/2/3/4/5/6) below and press enter:\n");
 
         int opt;
 
@@ -39,6 +41,8 @@ int main() {
             machine_machine(); break;
         case 5:
             return 0;
+        case 6:
+            display_help_info(); break;
         default:
             printf("Please enter one digit 1 / 2 / 3 / 4 / 5.\nPress any key to re-enter.");
             system("pause > nul");

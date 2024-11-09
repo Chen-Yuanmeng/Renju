@@ -1,0 +1,49 @@
+Help info for Renju Game
+
+-------------------------------------------------------------------------
+Compiler Information:
+
+This program can be compiled successfully under the following
+platform and compiler:
+
+    Microsoft Windows
+    Version 22H2 (10.0.19045.5073)
+
+    gcc (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 13.1.0
+    Copyright (C) 2023 Free Software Foundation, Inc.
+    This is free software; see the source for copying conditions.  There is NO 
+    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+This code has NOT been tested using other compilers (for example MSVC).
+If compiling should fail, please use gcc instead.
+
+-------------------------------------------------------------------------
+Display information:
+
+The chessboard uses rich-color display.
+
+The program fails to show properly on many terminals (for example,
+Command Prompt and Powershell on Windows 10). Thus, if this fails
+to show properly on some consoles, please turn to more modern
+terminal choices.
+
+A final fallback choice (the one I used during developing) is
+Visual Studio Code terminal and Consolas Font.
+
+-------------------------------------------------------------------------
+Author information:
+
+This program is developed by Chen Yumeng (Student Number 2023K8009929028)
+under the help of teachers and other classmates.
+
+See https://github.com/Chen-Yuanmeng/Renju for more information.
+(This may be a private repository, but by Jan 10, 2025 it should
+have been made public.)
+
+
+-------------------------------------------------------------------------
+Contact information:
+
+Feel free to contact the author at chenyumeng23@mails.ucas.ac.cn.
+
+
