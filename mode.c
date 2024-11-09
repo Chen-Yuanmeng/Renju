@@ -1,12 +1,11 @@
 // This file defines multiple modes in GoBang program:
 
 #include "mode.h"
-#include "chessboard.h"
 
 // Man-man combat
 void man_man() {
     // Initialize board state:
-    // 0: No space whatsoever
+    // 0: No piece whatsoever
     // 1: White piece `WHITE`
     // 2: Black piece `BLACK`
     int board_state[BOARD_SIZE][BOARD_SIZE] = {};
@@ -16,45 +15,32 @@ void man_man() {
     // Example: A15 (0, 0) | O15 (0, 14) | 
     int last_put[2] = {-1, -1};
     
-    
-    // For testing purposes:
-    // srand(time(NULL));
-    // for (int i = 0; i < BOARD_SIZE; ++i) {
-    //     for (int j = 0; j < BOARD_SIZE; ++j) {
-    //         board_state[i][j] = rand() % 3;
-    //         last_put[0] = i;
-    //         last_put[1] = j;
-    //     }
-    // }
+    // Put first piece at H8
+    int first_position[2] = {7, 7};
+    put_piece(BLACK, first_position, board_state, last_put);
+    draw_board(board_state, last_put);
+    printf("The first Black piece has been put at H8 for you.\nPress any key to continue...");
+    system("pause > nul");
+    system("cls");
+    draw_board(board_state, last_put);
 
-
-    // draw_board(board_state, last_put);
-
-
-    // for (int i = 0; i < 10; ++i) {
-    //     char* new_pos_str = get_input_position("\nPlease input position: ");
-    //     int* new_pos = string_to_position(new_pos_str);
-    //     printf("\n\nPiece: %s", new_pos_str);
-    //     if (rand() % 2) {
-    //         printf(" %s\n", "Black");
-    //         put_piece(BLACK, new_pos, board_state, last_put);
-    //     }
-    //     else {
-    //         printf(" %s\n", "White");
-    //         put_piece(WHITE, new_pos, board_state, last_put);
-    //     }
-    //     free(new_pos_str);
-    //     free(new_pos);
-    //     draw_board(board_state, last_put);
-    // }
-    printf("man_man");
-    system("pause");
+    // Loop until status becomes true
+    int status = 0;
+    int next = WHITE;
+    while (!status) {
+        put_piece_prompt(next, board_state, last_put);
+        next = (next == BLACK) ? WHITE : BLACK;
+        status = check(board_state, last_put);
+        check_prompt(status);
+        system("cls");
+        draw_board(board_state, last_put);
+    };
 }
 
 // Man-machine combat
 void man_machine() {
     // Initialize board state:
-    // 0: No space whatsoever
+    // 0: No piece whatsoever
     // 1: White piece
     // 2: Black piece
     int board_state[BOARD_SIZE][BOARD_SIZE] = {};
@@ -71,7 +57,7 @@ void man_machine() {
 // Machine-man combat
 void machine_man() {
     // Initialize board state:
-    // 0: No space whatsoever
+    // 0: No piece whatsoever
     // 1: White piece
     // 2: Black piece
     int board_state[BOARD_SIZE][BOARD_SIZE] = {};
@@ -88,7 +74,7 @@ void machine_man() {
 // Machine-machine combat (only for training/testing purposes)
 void machine_machine() {
     // Initialize board state:
-    // 0: No space whatsoever
+    // 0: No piece whatsoever
     // 1: White piece
     // 2: Black piece
     int board_state[BOARD_SIZE][BOARD_SIZE] = {};
