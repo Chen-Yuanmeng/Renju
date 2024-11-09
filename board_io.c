@@ -45,6 +45,8 @@ char* get_input_position(char prompt[]) {
     printf("%s", prompt);
     scanf_s("%3s", new_pos, 4);
 
+    new_pos[0] = toupper(new_pos[0]);
+
     return new_pos;
 }
 
@@ -55,16 +57,28 @@ void put_piece_prompt(int next, int board_state[][BOARD_SIZE], int last_put[]) {
     assert(next == BLACK || next == WHITE);
 
     if (next == BLACK) {
-        printf("BLACK to go.\nPlease tell me where to place the next black piece: ");
+        printf("BLACK to go.\nPlease tell me where to place the next black piece (in the form of H8 or h8): ");
     }
     else {
-        printf("WHITE to go.\nPlease tell me where to place the next white piece: ");
+        printf("WHITE to go.\nPlease tell me where to place the next white piece (in the form of H8 or h8): ");
     }
 
-    char* to_put_str;
-    int* new_pos;
+    char* to_put_str = (char*)malloc(4 * sizeof(char));
+    int* new_pos = (int*)malloc(2 * sizeof(int));
     to_put_str = get_input_position("");
     new_pos = string_to_position(to_put_str);
+
+    while (board_state[new_pos[0]][new_pos[1]]) {
+        printf("\033[31mWARNING\033[0m: There is already a piece at %s. Please re-enter: ", to_put_str);
+        to_put_str = get_input_position("");
+        new_pos = string_to_position(to_put_str);
+    }
+
+    while ((new_pos[0] < 0 || new_pos[0] > 14) && (new_pos[1] < 0 || new_pos[1] > 14)) {
+        printf("\033[31mWARNING\033[0m: %s is not on the chessboard. Please re-enter: ", to_put_str);
+        to_put_str = get_input_position("");
+        new_pos = string_to_position(to_put_str);
+    }
 
     put_piece(next, new_pos, board_state, last_put);
 
@@ -92,7 +106,7 @@ void check_prompt(int retval) {
     case 0110:
     case 0111:
     case 0112:
-        printf("Black has forbidden moves. White wins. Game over.\n");
+        printf("Black has performed forbidden moves. White wins. Game over.\n");
         system("pause > nul");
         break;
     case 0100:
