@@ -6,9 +6,9 @@
 #include <assert.h>
 #include <time.h>
 
-extern const int BOARD_SIZE;
-extern const int BLACK;
-extern const int WHITE;
+#define BOARD_SIZE 15
+#define BLACK 1
+#define WHITE 2
 
 int get_on_board_chars(int line, int column, int state, int last_put[]);
 
