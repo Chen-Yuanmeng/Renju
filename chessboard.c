@@ -3,7 +3,7 @@
 
 // Needed for `void draw_board`
 int get_on_board_chars(int line, int column, int state, int last_put[]) {
-    if (state == 0) {   // No chess piece in the spot
+    if (state == NONE) {   // No chess piece in the spot
         if (line == 0) {
             if (column == 0) {
                 wprintf(L"%lc", L'┌');

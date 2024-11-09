@@ -9,6 +9,7 @@
 #define BOARD_SIZE 15
 #define BLACK 1
 #define WHITE 2
+#define NONE 0
 
 int get_on_board_chars(int line, int column, int state, int last_put[]);
 
