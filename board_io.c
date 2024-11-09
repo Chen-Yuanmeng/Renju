@@ -71,3 +71,33 @@ void put_piece_prompt(int next, int board_state[][BOARD_SIZE], int last_put[]) {
     free(to_put_str);
     free(new_pos);
 }
+
+void check_prompt(int retval) {
+    switch (retval) {
+    case 0000:
+        break;
+    case 0001:
+    case 0101:
+        printf("Black wins. Game over.\n");
+        system("pause > nul");
+        break;
+    case 0002:
+    case 0102:
+        printf("White wins. Game over.\n");
+        system("pause > nul");
+        break;
+    case 0010:
+    case 0011:
+    case 0012:
+    case 0110:
+    case 0111:
+    case 0112:
+        printf("Black has forbidden moves. White wins. Game over.\n");
+        system("pause > nul");
+        break;
+    case 0100:
+        printf("The board is full. It is a draw. Game over.\n");
+        system("pause > nul");
+        break;
+    }
+}
