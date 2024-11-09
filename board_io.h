@@ -1,5 +1,5 @@
-#ifndef BOARD_IO_H
-#define BOARD_IO_H
+#ifndef __BOARD_IO_H
+#define __BOARD_IO_H
 
 #include <stdio.h>
 #include <stdlib.h>

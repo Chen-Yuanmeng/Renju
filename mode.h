@@ -1,5 +1,5 @@
-#ifndef MODE_H
-#define MODE_H
+#ifndef __MODE_H
+#define __MODE_H
 
 #include <stdlib.h>
 #include "chessboard.h"

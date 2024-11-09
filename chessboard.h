@@ -1,5 +1,5 @@
-#ifndef CHESSBOARD_H
-#define CHESSBOARD_H
+#ifndef __CHESSBOARD_H
+#define __CHESSBOARD_H
 
 #include <stdio.h>
 #include <wchar.h>
