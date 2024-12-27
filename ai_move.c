@@ -35,6 +35,13 @@ void initialize() {
     });
 }
 
+/**
+ * @brief Clean up hashtable.
+*/
+void cleanup() {
+    destroy_hashtable(ht);
+}
+
 void push_move(Position pos, Pair scores, int player) {
     moves[moves_count].pos = pos;
     moves[moves_count].scores = scores;
@@ -55,8 +62,15 @@ Move pop_move() {
  * @retval Position          position to put the piece
  */
 Position move(int board_state[][BOARD_SIZE], int player, int role_computer) {
-    Move_t best_move = alpha_beta(board_state, TOTAL_DEPTH, NEG_INFINITY, INFINITY, player, role_computer);
-    return best_move.pos;
+    if (req_count > 500000) {
+        Move_t best_move = alpha_beta(board_state, TOTAL_DEPTH - 2, NEG_INFINITY, INFINITY, player, role_computer);
+        return best_move.pos;
+    }
+    else {
+        Move_t best_move = alpha_beta(board_state, TOTAL_DEPTH, NEG_INFINITY, INFINITY, player, role_computer);
+        return best_move.pos;
+    }
+    
 }
 
 /**
@@ -151,7 +165,7 @@ Move_t alpha_beta(int board_state[][BOARD_SIZE], int depth, int alpha, int beta,
     int count = find_available_moves(board_state, player, available_moves);
 
     if (depth == 0 || count == 0) {
-        if (role_computer == BLACK) { // maximizing player
+        if (role_computer == BLACK) {
             if (player == BLACK) {
                 move_to_return.score_used = - moves[moves_count - 1].scores.score_white;
             }

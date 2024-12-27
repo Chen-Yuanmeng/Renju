@@ -21,6 +21,7 @@ typedef struct _move_t {
 } Move_t;
 
 void initialize();
+void cleanup();
 void push_move(Position pos, Pair scores, int player);
 Move pop_move();
 Position move(int board_state[][BOARD_SIZE], int player, int role_computer);
