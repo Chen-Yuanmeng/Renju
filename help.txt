@@ -1,6 +1,14 @@
 Help info for Renju Game
 
 -------------------------------------------------------------------------
+Algorithm information:
+
+This program does NOT use generative AI.
+
+Instead, it utilizes Minimax and Alpha-beta pruning algorithms to
+simulate the game process.
+
+-------------------------------------------------------------------------
 Compiler Information:
 
 This program can be compiled successfully under the following
@@ -14,8 +22,8 @@ platform and compiler:
     This is free software; see the source for copying conditions.  There is NO 
     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-This code has NOT been tested using other compilers (for example MSVC).
-If compiling should fail, please use gcc instead.
+This code has been tested using other compilers (namely MSVC) and
+has proved to fail. If compiling should fail, please use gcc instead.
 
 -------------------------------------------------------------------------
 Display information:
@@ -25,7 +33,7 @@ The chessboard uses rich-color display.
 The program fails to show properly on many terminals (for example,
 Command Prompt and Powershell on Windows 10). Thus, if this fails
 to show properly on some consoles, please turn to more modern
-terminal choices.
+terminal choices, such as Windows Terminal.
 
 A final fallback choice (the one I used during developing) is
 Visual Studio Code terminal and Consolas Font.
@@ -44,6 +52,7 @@ have been made public.)
 -------------------------------------------------------------------------
 Contact information:
 
-Feel free to contact the author at chenyumeng23@mails.ucas.ac.cn.
+Feel free to contact the author at chenyumeng23@mails.ucas.ac.cn,
+or raise Issues/Pull requests on GitHub.
 
 
