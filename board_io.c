@@ -49,7 +49,7 @@ char* get_input_position(char prompt[]) {
 
     while (
         !(new_pos[0] >= 'A' && new_pos[0] <= 'O') || !(
-            (new_pos[1] >= '0' && new_pos[1] <= '9' && new_pos[2] == '\0') ||
+            (new_pos[1] > '0' && new_pos[1] <= '9' && new_pos[2] == '\0') ||
             (new_pos[1] == '1' && new_pos[2] >= '0' && new_pos[2] <= '5' && new_pos[3] == '\0')
         )
     ) {
@@ -103,12 +103,12 @@ void check_prompt(int retval) {
         break;
     case 0001:
     case 0101:
-        printf("Black wins. Game over.\n");
+        printf("Black wins. Game over.\nPress any key to proceed...");
         system("pause > nul");
         break;
     case 0002:
     case 0102:
-        printf("White wins. Game over.\n");
+        printf("White wins. Game over.\nPress any key to proceed...");
         system("pause > nul");
         break;
     case 0010:
