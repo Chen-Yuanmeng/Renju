@@ -103,12 +103,12 @@ void check_prompt(int retval) {
         break;
     case 0001:
     case 0101:
-        printf("Black wins. Game over.\nPress any key to proceed...");
+        printf("\033[33mBlack wins. Game over.\033[0m\nPress any key to proceed...");
         system("pause > nul");
         break;
     case 0002:
     case 0102:
-        printf("White wins. Game over.\nPress any key to proceed...");
+        printf("\033[33mWhite wins. Game over.\033[0m\nPress any key to proceed...");
         system("pause > nul");
         break;
     case 0010:
@@ -117,11 +117,11 @@ void check_prompt(int retval) {
     case 0110:
     case 0111:
     case 0112:
-        printf("Black has performed forbidden moves. White wins. Game over.\n");
+        printf("\033[33mBlack has performed forbidden moves. White wins. Game over.\033[0m\n");
         system("pause > nul");
         break;
     case 0100:
-        printf("The board is full. It is a draw. Game over.\n");
+        printf("\033[33mThe board is full. It is a draw. Game over.\033[0m\n");
         system("pause > nul");
         break;
     }
