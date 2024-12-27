@@ -26,7 +26,7 @@ int main() {
         printf("\t6. Display help information.\n\n");
         printf("Please enter your option (1/2/3/4/5/6) below and press enter:\n");
 
-        int opt;
+        int opt = 0;
 
         scanf_s("%d", &opt);
         system("cls");
