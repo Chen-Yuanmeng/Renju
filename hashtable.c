@@ -35,7 +35,7 @@ void insert_node(HashTable* ht, unsigned long long key, Pair value) {
 int search_node(HashTable* ht, unsigned long long key, Pair *value) {
     int index = hash(key);
     HashNode* current = ht->table[index];
-    
+
     while (current != NULL) {
         if (current->key == key) {
             *value = current->value;
@@ -43,7 +43,7 @@ int search_node(HashTable* ht, unsigned long long key, Pair *value) {
         }
         current = current->next;
     }
-    
+
     return -1; // Not found
 }
 

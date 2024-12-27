@@ -6,8 +6,8 @@
 //     others - failed check
 int check(int board_state[][BOARD_SIZE], int last_put[], int next) {
     return (
-        check_win(board_state, last_put, next) + 
-        check_forbidden_move(board_state, last_put, next) + 
+        check_win(board_state, last_put, next) +
+        check_forbidden_move(board_state, last_put, next) +
         check_full_board(board_state, last_put)
     );
 }
@@ -125,7 +125,7 @@ int check_forbidden_move(int board_state[][BOARD_SIZE], int last_put[], int next
     if (next == WHITE) {
         return 8 * (!!(is_forbidden_move(board_state, last_put[0], last_put[1])));
     }
-    return 0;    
+    return 0;
 }
 
 // Check full function: check if board is full
@@ -178,13 +178,13 @@ int is_forbidden_move(int board_state[][BOARD_SIZE], int x_row, int y_column) {
 int check_double_three(int board_state[][BOARD_SIZE], int x_row, int y_column) {
     // Situation around the chess piece, '0': blank; '1': BLACK; '2': WHITE; '4': no_board;
     char chess[10];
-    
+
     int i;
     int x;              // Line number
     int y;              // Column number
-    int addr;           // Address offset of found string 
+    int addr;           // Address offset of found string
     int count = 0;      // Number of three's
-    int is_fake;        // Flag whether it is fake 
+    int is_fake;        // Flag whether it is fake
 
     // On lines (-)
     x = x_row;

@@ -48,7 +48,7 @@ Move pop_move() {
 
 /**
  * @brief AI makes a move
- * 
+ *
  * @param[in] board_state    current board state
  * @param[in] player         player to move
  * @param[in] role_computer  role of the computer
@@ -61,7 +61,7 @@ Position move(int board_state[][BOARD_SIZE], int player, int role_computer) {
 
 /**
  * @brief Put a piece on the board in AI mode.
- * 
+ *
  * @param color The color of the piece to put (BLACK or WHITE).
  * @param pos The position to put the piece.
  * @param board_state The current state of the board.

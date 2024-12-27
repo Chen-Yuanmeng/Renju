@@ -12,9 +12,9 @@ void man_man() {
 
     // Initialize position last put (default -1, -1)
     // All positions are (line, column) from 0 up.
-    // Example: A15 (0, 0) | O15 (0, 14) | 
+    // Example: A15 (0, 0) | O15 (0, 14)
     int last_put[2] = {-1, -1};
-    
+
     // Put first piece at H8
     int first_position[2] = {7, 7};
     put_piece(BLACK, first_position, board_state, last_put);
@@ -37,8 +37,8 @@ void man_man() {
     };
 }
 
-// Man-machine combat: man goes first (black) 
-void man_machine() { 
+// Man-machine combat: man goes first (black)
+void man_machine() {
     int board_state[BOARD_SIZE][BOARD_SIZE] = {0};
     int last_put[2] = {-1, -1};
 
@@ -64,7 +64,7 @@ void man_machine() {
 
             Position pos = move(board_state, WHITE, WHITE);
             AI_put_piece(WHITE, pos, board_state, WHITE);
-            
+
             clock_t end = clock();
             last_put[0] = pos.x;
             last_put[1] = pos.y;
@@ -119,7 +119,7 @@ void machine_man() {
 
             Position pos = move(board_state, BLACK, BLACK);
             AI_put_piece(BLACK, pos, board_state, BLACK);
-            
+
             clock_t end = clock();
             last_put[0] = pos.x;
             last_put[1] = pos.y;
@@ -172,7 +172,7 @@ void machine_machine() {
 
             Position pos = move(board_state, BLACK, BLACK);
             AI_put_piece(BLACK, pos, board_state, BLACK);
-            
+
             clock_t end = clock();
             last_put[0] = pos.x;
             last_put[1] = pos.y;
@@ -189,7 +189,7 @@ void machine_machine() {
 
             Position pos = move(board_state, WHITE, WHITE);
             AI_put_piece(WHITE, pos, board_state, WHITE);
-            
+
             clock_t end = clock();
             last_put[0] = pos.x;
             last_put[1] = pos.y;
