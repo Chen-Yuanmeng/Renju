@@ -59,7 +59,7 @@ void man_machine() {
     int next = WHITE;
     while (!status) {
         if (next == WHITE) {  // AI's turn
-            printf("AI calculating...");
+            printf("AI calculating...\n");
             clock_t start = clock();
 
             Position pos = move(board_state, WHITE, WHITE);
@@ -90,6 +90,8 @@ void man_machine() {
         }
         print_counts();
     };
+
+    cleanup();
 }
 
 // Machine-man combat
@@ -104,7 +106,7 @@ void machine_man() {
     last_put[0] = 7;
     last_put[1] = 7;
     draw_board(board_state, last_put);
-    printf("The first Black piece has been put at H8 for you.\nPress any key to continue...\n");
+    printf("The first Black piece has been put at H8 for AI.\nPress any key to continue...\n");
     system("pause > nul");
     // system("cls");
     draw_board(board_state, last_put);
@@ -114,7 +116,7 @@ void machine_man() {
     int next = WHITE;
     while (!status) {
         if (next == BLACK) {  // AI's turn
-            printf("AI calculating...");
+            printf("AI calculating...\n");
             clock_t start = clock();
 
             Position pos = move(board_state, BLACK, BLACK);
@@ -145,6 +147,8 @@ void machine_man() {
         }
         print_counts();
     };
+
+    cleanup();
 }
 
 // Machine-machine combat (only for training/testing purposes)
@@ -167,6 +171,9 @@ void machine_machine() {
     int status = 0;
     int next = WHITE;
     while (!status) {
+        printf("Waiting 2 seconds before next move...\n");
+        sleep(2);
+        printf("AI calculating...\n");
         if (next == BLACK) {  // AI black's turn
             clock_t start = clock();
 
@@ -202,9 +209,7 @@ void machine_machine() {
             check_prompt(status);
         }
         print_counts();
-        printf("Waiting 2 seconds before next move...\n");
-        sleep(2);
-        printf("AI calculating...");
     };
 
+    cleanup();
 }
