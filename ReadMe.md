@@ -4,6 +4,9 @@
 
 此仓库仅做本人同步使用, 不建议各位同学参考, 请各位学弟学妹独立思考独立完成作业.
 
+> [!IMPORTANT]
+> 本实现中, 计分表等功能有问题, 请不要依赖本版本的计分表.
+
 ## 规则说明
 
 具体可参考 [*Renju* - Wikipedia](https://en.wikipedia.org/wiki/Renju).
